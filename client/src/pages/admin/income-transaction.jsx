@@ -48,15 +48,15 @@ export default function IncomeTransaction() {
                     {transaction?.map((data, index) => (
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th class="px-6 py-4 font-medium text-gray-900">{index + 1}</th>
-                            <th class="pl-6 pr-auto py-4 font-medium text-gray-900">{data.id}</th>
-                            <td class="pl-6 pr-auto py-4">{data.name}</td>
-                            <td class="px-6 py-4 -all">{data.book_purchases.map((book) => <span>{book.title}</span>).reduce((prev, curr) => [prev, ", ", curr])}</td>
-                            <td class="px-6 py-4">{rupiah(data.total)}</td>
-                            {data.status === "success" ? (
+                            <th class="pl-6 pr-auto py-4 font-medium text-gray-900">{data?.id}</th>
+                            <td class="pl-6 pr-auto py-4">{data?.name}</td>
+                            <td class="px-6 py-4 -all">{data?.book_purchases.map((book) => <span>{book.title}</span>).reduce((prev, curr) => [prev, ", ", curr])}</td>
+                            <td class="px-6 py-4">{rupiah(data?.total)}</td>
+                            {data?.status === "success" ? (
                                 <td class="px-6 py-4 text-green-500 font-semibold">Success</td>
-                            ) : data.status === "pending" ? (
+                            ) : data?.status === "pending" ? (
                                 <td class="px-6 py-4 text-yellow-400 font-semibold">Pending</td>
-                            ) : data.status === "failed" ? (
+                            ) : data?.status === "failed" ? (
                                 <td class="px-6 py-4 text-red-500 font-semibold">Failed</td>
                             ) : (
                                 <td class="px-6 py-4 text-blue-500 font-semibold">Waiting</td>
